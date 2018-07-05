@@ -7,10 +7,10 @@ run-gold: main-gold
 	./main-gold 4 5 6
 
 main-lld: main.cpp
-	clang++ -fuse-ld=lld  -o main-lld  -v -static -pthread main.cpp -Wl,--reproduce=main-lld-repro.tar
+	clang++ -fuse-ld=lld  -g -o main-lld  -v -static -pthread main.cpp -Wl,--reproduce=main-lld-repro
 
 main-gold: main.cpp
-	clang++ -fuse-ld=gold -o main-gold -v -static -pthread main.cpp
+	clang++ -fuse-ld=gold -g -o main-gold -v -static -pthread main.cpp
 
 .PHONY: clean
 clean:
